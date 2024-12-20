@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>PanADA | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
+<title>PanADA</title>
 <meta name="generator" content="Jekyll v4.3.4">
 <meta property="og:title" content="PanADA">
 <meta property="og:locale" content="en_US">
@@ -605,15 +605,12 @@ function googleTranslateElementInit() {
 
 
 
-
 <script>
   (function() {
     var sw = document.getElementById('theme-switch');
     var html = document.getElementsByTagName('html')[0];
-    var nightModeOption = ('auto' || 'auto').toLowerCase();
-    var storage = nightModeOption === 'manual'
-        ? localStorage
-        : sessionStorage;
+    var nightModeOption = 'manual'; // Change to manual mode
+    var storage = localStorage; // Use localStorage for persistence
     var themeData = loadThemeData();
 
     function saveThemeData(data) {
@@ -625,7 +622,7 @@ function googleTranslateElementInit() {
       try {
         data = JSON.parse(data ? data : '');
       } catch(e) {
-        data = { nightShift: undefined, autoToggleAt: 0 };
+        data = { nightShift: undefined };
         saveThemeData(data);
       }
       return data;
@@ -640,65 +637,17 @@ function googleTranslateElementInit() {
       }, 50);
     }
 
-    function autoThemeToggle() {
-      // Next time point of theme toggle
-      var now = new Date();
-      var toggleAt = new Date();
-      var hours = now.getHours();
-      var nightShift = hours >= 19 || hours <=7;
-
-      if (nightShift) {
-        if (hours > 7) {
-          toggleAt.setDate(toggleAt.getDate() + 1);
-        }
-        toggleAt.setHours(7);
-      } else {
-        toggleAt.setHours(19);
-      }
-
-      toggleAt.setMinutes(0);
-      toggleAt.setSeconds(0);
-      toggleAt.setMilliseconds(0)
-
-      var delay = toggleAt.getTime() - now.getTime();
-
-      // auto toggle theme mode
-      setTimeout(function() {
-        handleThemeToggle(!nightShift);
-      }, delay);
-
-      return {
-        nightShift: nightShift,
-        toggleAt: toggleAt.getTime()
-      };
-    }
-
-    // Listen the theme toggle event
+    // Listen to the theme toggle event
     sw.addEventListener('change', function(event) {
       handleThemeToggle(event.target.checked);
     });
 
-    if (nightModeOption == 'auto') {
-      var data = autoThemeToggle();
-
-      // Toggle theme by local setting
-      if (data.toggleAt > themeData.autoToggleAt) {
-        themeData.autoToggleAt = data.toggleAt;
-        handleThemeToggle(data.nightShift);
-      } else {
-        handleThemeToggle(themeData.nightShift);
-      }
-    } else if (nightModeOption == 'manual') {
-      handleThemeToggle(themeData.nightShift);
-    } else {
-      var nightShift = themeData.nightShift;
-      if (nightShift === undefined) {
-        nightShift = nightModeOption === 'on';
-      }
-      handleThemeToggle(nightShift);
-    }
+    // Always use the manual mode logic
+    handleThemeToggle(themeData.nightShift === true);
   })();
 </script>
+
+  
 <div id="click-to-top" class="click-to-top">
   <i class="fa fa-arrow-up"></i>
 </div>
