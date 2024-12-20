@@ -31,10 +31,68 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
 <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+<style>
+  /* Sticky and Shrinking Header */
+  .site-header {
+    position: sticky; /* Keeps the header fixed while scrolling */
+    top: 0; /* Sticks the header to the top */
+    width: 100%; /* Ensures it spans the full width */
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    z-index: 1000; /* Makes sure it stays on top */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for shrinking */
+  }
+
+  /* Normal header height */
+  .site-header-large {
+    padding: 20px 0; /* Larger padding when not scrolled */
+  }
+
+  /* Shrunk header */
+  .site-header-small {
+    padding: 20px 0; /* Smaller padding when scrolled */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
+  }
+
+  /* Navigation Links */
+  .navigation-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Navigation Links */
+.navigation-links a {
+  text-decoration: none;
+  color: #333; /* Default color */
+  font-weight: bold;
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.navigation-links a:hover {
+  color: #ff4e00; /* Orange on hover */
+}
+
+.language-dropdown {
+    position: relative;
+    margin-left: auto; /* Pushes the dropdown to the far right */
+    display: flex; /* Ensures proper alignment */
+    justify-content: flex-end; /* Aligns the content inside to the right */
+    background-color: transparent;
+}
+
+html {
+      scroll-behavior: smooth;
+    }
+</style>
 
 
 
 <script>
+  
 // Init highlight js
 document.addEventListener('DOMContentLoaded', function(event) {
   var els = document.querySelectorAll('pre code')
@@ -259,6 +317,68 @@ document.addEventListener('DOMContentLoaded', function(event) {
   PanADA
 </a>
 </span><nav class="site-nav">
+  <ul class="navigation-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#research-questions-banner">Research Question</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#datastory">Datastory</a></li>
+    <li><a href="#team">Team</a></li>
+    <span class="ct-language language-dropdown">
+      <ul class="list-unstyled ct-language-dropdown">
+        
+          <li>
+            <a href="#" class="lang-select" data-lang="en">
+              
+              <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+              
+            </a>
+          </li>
+        
+          <li>
+            <a href="#" class="lang-select" data-lang="fr">
+              
+              <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+              
+            </a>
+          </li>
+        
+          <li>
+            <a href="#" class="lang-select" data-lang="zh-CN">
+              
+              <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+              
+            </a>
+          </li>
+        
+          <li>
+            <a href="#" class="lang-select" data-lang="ja">
+              
+              <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+              
+            </a>
+          </li>
+        
+          <li>
+            <a href="#" class="lang-select" data-lang="ko">
+              
+              <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+              
+            </a>
+          </li>
+        
+          <li>
+            <a href="#" class="lang-select" data-lang="ru">
+              
+              <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+              
+            </a>
+          </li>
+        
+      </ul>
+    </span>
+    
+    
+  </ul>
           <input type="checkbox" id="nav-trigger" class="nav-trigger">
           <label for="nav-trigger">
             <span class="menu-icon">
@@ -270,14 +390,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
           <div class="trigger">
 
-
-
-
-
-
-
-
-
 <span class="page-link">
 
 
@@ -285,59 +397,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 <div id="google_translate_element" style="display: none;">
 </div>
 
-<span class="ct-language">
-  <ul class="list-unstyled ct-language-dropdown">
-    
-      <li>
-        <a href="#" class="lang-select" data-lang="en">
-          
-          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
-          
-        </a>
-      </li>
-    
-      <li>
-        <a href="#" class="lang-select" data-lang="fr">
-          
-          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
-          
-        </a>
-      </li>
-    
-      <li>
-        <a href="#" class="lang-select" data-lang="zh-CN">
-          
-          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
-          
-        </a>
-      </li>
-    
-      <li>
-        <a href="#" class="lang-select" data-lang="ja">
-          
-          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
-          
-        </a>
-      </li>
-    
-      <li>
-        <a href="#" class="lang-select" data-lang="ko">
-          
-          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
-          
-        </a>
-      </li>
-    
-      <li>
-        <a href="#" class="lang-select" data-lang="ru">
-          
-          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
-          
-        </a>
-      </li>
-    
-  </ul>
-</span>
+
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
@@ -459,7 +519,7 @@ function googleTranslateElementInit() {
 
 
 
-<section class="page-banner">
+<section id="Home" class="page-banner">
   <div class="page-banner-img">
       <div style="background-image: url(assets/images/tablet-7025897_1920.jpg);"></div>
       <img class="img-placeholder" src="assets/images/tablet-7025897_1920.jpg" alt="Banner Image">
@@ -494,11 +554,10 @@ function googleTranslateElementInit() {
 <section id="research-questions-banner" class="research-questions-banner">
   <div class="banner-content">
     <ul id="questions-list">
-      <li> How has the frequency and consistency of content creation evolved over time across different channel categories?</li>
-      <li>Which content categories drive YouTube's professionalization, and how have their practices evolved?</li>
-      <li>How does investment in content production reflect the transition from hobby to profession?</li>
-      <li>How has creator content strategy evolved to reflect professional monetization approaches?</li>
-      <li> How has community management evolved from casual interaction to professional engagement strategies?</li>
+      <li> How has the frequency and consistency of content creation evolved over time across <b>different channel categories?</b></li>
+      <li>Which content categories drive <b>YouTube's professionalization</b>, and how have their practices evolved?</li>
+      <li>How does investment in <b>content production</b> reflect the transition from hobby to profession?</li>
+      <li> How has community management evolved from casual interaction to professional engagement <b>strategies?</b></li>
     </ul>
   </div>
 </section>
@@ -675,11 +734,11 @@ function googleTranslateElementInit() {
   
 
   <!-- Introduction Block -->
-<section class="introduction" style="padding: 20px; background-color: #f9f9f9; text-align: center;">
+<section id="introduction" class="introduction" style="padding: 20px; background-color: #f9f9f9; text-align: center;">
   <div class="wrapper">
     <h2>Welcome to PanADA</h2>
-    <p>Since its launch in 2005, YouTube has transformed from a simple video-sharing site into the largest online video platform in the world. What began as a space for casual uploads has evolved into a thriving ecosystem where content creation is not just a hobby, but a viable and lucrative profession gathering hundreds of millions of people around channels and videos. 
-      <br>Today, millions of creators, from individuals to businesses, use YouTube to share knowledge, entertain global audiences, and build careers.
+    <p>Since its launch in 2005, <b>YouTube</b> has transformed from a simple video-sharing site into the largest online video platform in the world. What began as a space for casual uploads has evolved into a thriving ecosystem where content creation is not just a hobby, but a viable and lucrative profession gathering hundreds of millions of people around channels and videos. 
+      <br>Today, millions of creators, from individuals to businesses, use YouTube to share knowledge, entertain global audiences, and <b>build careers.</b>
       This data story explores the evolution of YouTube's content creation landscape, focusing on key trends that mark the platform's professionalization. <br>By examining upload patterns, production efforts, and content strategies across categories, we map the platform's transition from a space for amateur expression to a professionalized digital career hub. This exploration not only highlights how content creators have adapted to an evolving ecosystem but also sheds light on the dynamics that drive success in today’s digital media landscape.
       </p>
   </div>
@@ -687,7 +746,7 @@ function googleTranslateElementInit() {
 <div class="flourish-embed flourish-cards" data-src="visualisation/20853096"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20853096/thumbnail" width="100%" alt="cards visualization" /></noscript></div>
 
 <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-  <p>To keep reading, skip the ad!</p>
+  <p>To keep reading, skip the ad! After all content can't be all free 😉</p>
   <button id="closePopup" style="background-color: #ff4e00; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px;">Skip the Ad</button>
 </div>
 
@@ -752,24 +811,24 @@ function googleTranslateElementInit() {
 
 <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"></div>
 
-      <h3>The Evolution of Content Creation on YouTube</h3>
+      <h3 id="datastory">The Evolution of Content Creation on YouTube</h3>
       <p>From cat videos to blockbuster productions, YouTube has come a long way since its humble beginnings. Regular and consistent uploads are now hallmarks of professional content creation, reflecting strategic efforts to maintain audience engagement and drive growth. To explore how content creation has evolved over time, we examine upload frequency and consistency across different YouTube channel categories, highlighting trends that shaped the platform’s professionalization.</p>
-      <p>In the early days of YouTube, uploads were as unpredictable as a viral meme, with creators treating the platform as a casual playground for creativity. Fast forward to today, and the upload game has leveled up significantly. Categories like Gaming and Entertainment now dominate content production, churning out videos at a pace that could rival popcorn popping at a blockbuster premiere.</p>
+      <p>In the early days of YouTube, uploads were as unpredictable as a viral meme, with creators treating the platform as a casual playground for creativity. Fast forward to today, and the upload game has leveled up significantly. Categories like <b>Gaming and Entertainment</b> now dominate content production, churning out videos at a pace that could rival popcorn popping at a blockbuster premiere.</p>
       <div class="flourish-embed flourish-chart" data-src="visualisation/20879805"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20879805/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-      <p>This graph paints a vivid picture of YouTube's content explosion, showing the total number of uploads per year across various channel categories from 2008 to 2018. Gaming, Entertainment, and Music have taken center stage, with upload counts skyrocketing like fireworks on New Year's Eve, reflecting their starring role in YouTube's meteoric rise. Meanwhile, categories like Education, Science & Technology, and Nonprofits & Activism have grown at a steadier pace, quietly building their niche audiences without the same spotlight.</p>
-      <p>The data highlights a clear upward trend in upload frequency, especially after 2010—a time when YouTube started to feel less like a hobbyist's playground and more like a digital empire. Gaming and Entertainment raced ahead, leading the charge with uploads as abundant as power-ups in a video game, reflecting their immense popularity and the professionalization of creators. Meanwhile, Education and Music took a more methodical route, growing steadily as creators discovered the magic of structured, high-quality content in these areas, like striking the perfect chord in a symphony.</p>
+      <p>This graph paints a vivid picture of YouTube's content explosion, showing the total number of uploads per year across various channel categories from 2008 to 2018. <b>Gaming, Entertainment, and Music</b> have taken center stage, with upload counts skyrocketing like fireworks on New Year's Eve, reflecting their starring role in YouTube's meteoric rise. Meanwhile, categories like Education, Science & Technology, and Nonprofits & Activism have grown at a steadier pace, quietly building their niche audiences without the same spotlight.</p>
+      <p>The data highlights a clear upward trend in upload frequency, especially after 2010—a time when YouTube started to feel less like a hobbyist's playground and more like a digital empire. <b>Gaming and Entertainment</b> raced ahead, leading the charge with uploads as abundant as power-ups in a video game, reflecting their immense popularity and the professionalization of creators. Meanwhile, Education and Music took a more methodical route, growing steadily as creators discovered the magic of structured, high-quality content in these areas, like striking the perfect chord in a symphony.</p>
       <div class="flourish-embed flourish-chart" data-src="visualisation/20879941"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20879941/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-      <p>This colorful set of bar charts breaks down upload frequency per year for each channel category, giving us a front-row seat to YouTube’s evolution. It’s like watching a time-lapse of the platform's growth, where some categories—like Gaming and Entertainment—skyrocketed in activity, while others, such as Education and Music, found their rhythm more gradually, showcasing distinct patterns of rapid growth and moments of stabilization.</p>
-      <p>Entertainment and Gaming have been on a roll, growing consistently year-over-year, with upload numbers exploding between 2014 and 2018 like a viral trend that just won’t quit. Education, on the other hand, took the scenic route, showing a steady and deliberate rise as creators embraced more structured, professional practices. Meanwhile, categories like Nonprofits & Activism and News & Politics may not steal the spotlight, but their smaller, focused growth highlights their niche yet impactful presence on the platform.</p>
+      <p>This colorful set of bar charts breaks down upload frequency per year for each channel category, giving us a front-row seat to YouTube’s evolution. It’s like watching a time-lapse of the platform's growth, where some categories—like <b>Gaming and Entertainment</b>—skyrocketed in activity, while others, such as Education and Music, found their rhythm more gradually, showcasing distinct patterns of rapid growth and moments of stabilization.</p>
+      <p><b>Entertainment</b> and <b>Gaming</b> have been on a roll, growing consistently year-over-year, with upload numbers exploding between 2014 and 2018 like a viral trend that just won’t quit. Education, on the other hand, took the scenic route, showing a steady and deliberate rise as creators embraced more structured, professional practices. Meanwhile, categories like Nonprofits & Activism and News & Politics may not steal the spotlight, but their smaller, focused growth highlights their niche yet impactful presence on the platform.</p>
       <img src="assets/plots/long-tail-distribution-uploads-vs-views.png" width="100%" height="100%">
       <p>Imagine walking into a party where just a handful of guests are grabbing all the attention. That’s pretty much what we see in these long-tail distribution plots for YouTube categories! A small number of channels dominate the scene, amassing a whopping 80% of the views in their respective categories. These 'celebrity' channels have skyrocketed in popularity, leaving the rest to humbly share the remaining 20%.
 
         But here’s the plot twist: the channels with the most views aren’t necessarily the ones flooding the platform with uploads. The uploads curve tells a different story—it’s more gradual, showing that consistent upload machines aren’t always the ones stealing the spotlight. This contrast highlights the strategic genius of some creators who may upload less but manage to capture enormous attention with each video.
         
-        In categories like Gaming, Entertainment, and Education, these 'view magnets' shape the narrative of success, proving that quality (and timing!) often trumps quantity. These insights shine a light on how a select few creators have turned YouTube into their personal stage, setting the pace for others to follow</p>
+        In categories like <b>Gaming, Entertainment, and Education</b>, these 'view magnets' shape the narrative of success, proving that quality (and timing!) often trumps quantity. These insights shine a light on how a select few creators have turned YouTube into their personal stage, setting the pace for others to follow</p>
       <p>Upload frequency shows us how often creators hit 'publish,' but consistency tells the real story of their commitment, how reliably they stick to a schedule. It’s the difference between a one-hit wonder and a steady stream of content that keeps audiences coming back for more. Professional creators know the secret sauce: regular uploads at predictable intervals are the key to winning the hearts and views of their audiences.</p>
       <div class="flourish-embed flourish-chart" data-src="visualisation/20880195"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20880195/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
-      <p>This boxplot reveals the proportion of active months for channels in each category, with an 'active month' defined as one featuring at least 2 uploads. Think of it as a consistency scorecard! Categories like News & Politics and Nonprofits & Activism lead the way, boasting higher median consistency that reflects their carefully planned, strategic content schedules. Meanwhile, other categories show more variability, painting a diverse picture of upload habits.</p>
+      <p>This boxplot reveals the proportion of active months for channels in each category, with an <b>'active month'</b> defined as one featuring at least 2 uploads. Think of it as a consistency scorecard! Categories like News & Politics and Nonprofits & Activism lead the way, boasting higher median consistency that reflects their carefully planned, strategic content schedules. Meanwhile, other categories show more variability, painting a diverse picture of upload habits.</p>
       <p>Now that we’ve uncovered how content creation frequency and consistency have evolved, it’s time to zoom out and explore the bigger picture: which categories have been trailblazers in YouTube’s professionalization, and how have these professional strategies spread across the platform?</p>
     </div>
     <div class="text-block">
@@ -902,8 +961,13 @@ function googleTranslateElementInit() {
         There are mainly 17 categories of videos in the dataset, but two of them are under-represented. Only 5 videos are in the category “Movies” and 41 in the category “Shows” compared with the others that have from 600 thousands to 10 millions of videos. This is why we based our analysis on only 15 categories and ignored “Movies” and “Shows”.<br>
         
         The first goal was to compute a kind of distance between the themes. We identified how correlated were the behaviors of comment authors. For example, if we notice that people who often react under videos from theme A will also partially react under videos from theme B but will never react under videos from theme C, we will thus conclude that themes A and B are close to each other and thus their distance is close to 0 and A and B are far from C and thus their distances to C is close to 1. <br>
+
         
         </p>
+        <div style = "text-align: center;">
+          <img src="assets/plots/heatmap.jpg" width="70%" height="70%">
+        </div>
+        
         <p>Firstly, we notice that this is not that surprising. It is logical that people who comment content about Nonprofits & Activism will be more likely to comment under content about Education, News & Politics ... and the analysis is the same for the other categories. <br>
 
           We also notice that some themes seem to be close to a lot of different themes (for example Entertainment or People & Blog) and others seem to be quite isolated (for example Autos & Vehicles and Nonprofits & Activism). Moreover, Entertainment is in the top 3 of 9 categories while Nonprofits & Activism is in the top 3 of None. The following animation shows us how isolated or how strongly linked is a category compared with the others. <br></p>
@@ -919,6 +983,19 @@ function googleTranslateElementInit() {
             <p>They seem to be quite logical with reality. For a content creator, these clusters can be easily usable for his strategies. A content creator  working on Autos & Vehicles can make more contents about the science behind them, it will probably make his community react more and grow around new subjects it is interested in. </p>
     </div>
   </div>
+  <section id="introduction" class="introduction" style="padding: 20px; background-color: #f9f9f9; text-align:left;">
+    <div class="wrapper">
+      <h2>And to conclude...</h2>
+      <p>YouTube creators have gone pro, swapping casual uploads for a full-on content hustle. Once monetization kicks in, the game changes: random posts become scheduled drops, videos get longer and shinier, and audience engagement strategies level up. <br> 
+
+        The data’s clear: monetization milestones trigger a burst of productivity, followed by creators finding their groove. Affiliate-driven channels pump out quick, frequent vids for maximum reach, while membership-focused creators go for fewer, meatier uploads to keep subscribers hooked. <br> 
+        
+        Audience metrics? A spike in subscribers right after monetization cools into steady growth, proving creators need more than a viral hit—they need a plan. Engagement trends show overlapping clusters of entertainment, lifestyle, and comedy thriving, while niche content stays strong in its lane. <br> 
+        
+        Bottom line: YouTube isn’t just fun and games anymore—it’s a well-oiled machine where creators balance <b>creativity, strategy, and audience connection to crush it.</b></p>
+    </div>
+  </section>
+  
   <div class="flourish-embed flourish-photo-slider" data-src="visualisation/20876948"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20876948/thumbnail" width="100%" alt="photo-slider visualization" /></noscript></div>
 </section>
 
@@ -952,7 +1029,7 @@ function googleTranslateElementInit() {
 </div>
 
       </div>
-    </main><footer class="site-footer h-card">
+    </main><footer id="team" class="site-footer h-card">
       <data class="u-url" href="/"></data>
       <div class="wrapper">
         <div class="site-footer-inner">
@@ -999,8 +1076,8 @@ function googleTranslateElementInit() {
       }
     
       .photo {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: #ccc; /* Placeholder color */
   background-size: cover; /* Ensures the image covers the circle fully */
